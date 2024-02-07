@@ -1,0 +1,15 @@
+2.1)
+1. (expt(expt 7 5) 4)=>79792266297612001
+2.(ceiling(log(expt(expt 7 5) 4) 2))=>57
+3. C-h k is used to get info on a key binding's command,
+   so C-h k C-h k shows info on the command C-h k
+4. C-h k shows info on a key binding's command, so
+   C-h k M-SPC shows info on the command M-SPC
+5. cycle-spacing
+
+HW)
+Invoked on /dev/null => IndexError as /dev/null is empty.
+Python3 => SyntaxError on line
+	   except IOError as (errno, strerror)
+Running python2 on shuf.py works as intended due to python 2.7
+  supporting statements in python 3 (backporting)

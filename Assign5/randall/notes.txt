@@ -1,0 +1,36 @@
+Unpacked tarball and cloned repo
+	-tar -xvf randall-git.tgz -C randall-git-backup
+	-git clone randall-git-backup randall-git
+Added notes.txt to clone
+Changed randall.c to only have main, moved everything else to
+    new files (rand64-hw,rand64-sw,output,options). Added guards.
+    -Edited makefile with .o files
+    -created make check
+Edited options.c/options.h to process options
+    -used getopt to implement processing.
+    -added -i/-o options and error checks for arguments following
+Edited main to work with new options
+    -added conditions to check input types
+Created new func for mrand48_r in software
+    -uses mrand48_r for generation
+Created new func for / opt in software
+    -initializes with file instead of /dev/urandom
+Added parameter to writeBytes for -o N opt
+    -edited writeBytes to support -o N
+Changed Makefile to support new check
+
+tests:
+time ./randall 133562368 >/dev/null
+real    0m3.933s
+user    0m3.900s
+sys     0m0.013s
+
+bash-4.4$  time ./randall 133562368 | cat >/dev/null
+real    0m3.989s
+user    0m3.867s
+sys     0m0.274s
+
+time ./randall 133562368 >rand.data
+real    0m4.092s
+user    0m3.938s
+sys     0m0.102s
